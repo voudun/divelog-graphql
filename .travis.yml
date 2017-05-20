@@ -12,5 +12,3 @@ deploy:
   script: rsync -rvaz --delete-after --exclude-from=./exclude-rsync.txt $TRAVIS_BUILD_DIR/ deploy@139.162.159.229:/var/www/node.scubasys.nl
   on:
     branch: master
-before_install:
-  - openssl aes-256-cbc -K $encrypted_2c441f967c15_key -iv $encrypted_2c441f967c15_iv -in deploy_rsa.enc -out deploy_rsa -d
