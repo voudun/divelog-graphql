@@ -3,6 +3,7 @@ node_js:
   - '6'
 addons:
   ssh_known_hosts: 139.162.159.229
+install: npm install
 before_deploy:
   - openssl aes-256-cbc -K $encrypted_2c441f967c15_key -iv $encrypted_2c441f967c15_iv  -in deploy_key.enc -out /tmp/deploy_key -d
   - eval "$(ssh-agent -s)"

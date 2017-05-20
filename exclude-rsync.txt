@@ -1,7 +1,8 @@
 .git
 .gitignore
 .travis.yml
+.dpl
+README.md
 deploy_key.enc
 phpunit.xml.dist
 exclude-rsync.txt
-node_modules
