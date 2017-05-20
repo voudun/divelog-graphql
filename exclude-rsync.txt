@@ -1,0 +1,7 @@
+.git
+.gitignore
+.travis.yml
+deploy_key.enc
+phpunit.xml.dist
+exclude-rsync.txt
+node_modules
