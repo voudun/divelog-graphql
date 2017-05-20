@@ -11,6 +11,6 @@ before_deploy:
 deploy:
   provider: script
   skip_cleanup: true
-  script: rsync -rvaz --delete-after --exclude-from=./exclude-rsync.txt $TRAVIS_BUILD_DIR/ deploy@139.162.159.229:/var/www/node.scubasys.nl
+  script: rsync -rvaz --delete-after --exclude-from=./exclude-rsync.txt $TRAVIS_BUILD_DIR/ deploy@139.162.159.229:/var/www/divelogql.scubasys.nl
   on:
     branch: master
