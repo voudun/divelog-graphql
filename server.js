@@ -11,14 +11,17 @@ import schema from './data/schema';
 const PORT = 3001;
 
 let graphQLServer = express().use('*', cors());
+const env = process.env.NODE_ENV;
 
 graphQLServer.use('/graphql', bodyParser.json(), graphqlExpress ({
   schema: schema,
 }));
 
-graphQLServer.use('/graphiql', graphiqlExpress({
-  endpointURL: '/graphql',
-}));
+if (env !== 'production') {
+  graphQLServer.use('/graphiql', graphiqlExpress({
+    endpointURL: '/graphql',
+  }));
+}
 
 graphQLServer.use('/schema', (req, res) => {
   res.set('Content-Type', 'text/plain');
@@ -26,5 +29,5 @@ graphQLServer.use('/schema', (req, res) => {
 });
 
 graphQLServer.listen(PORT, () => console.log(
-  `GraphQL Server is now running on http://localhost:${PORT}/graphql`
+  `GraphQL Server is now running on https://localhost:${PORT}/graphql`
 ));
